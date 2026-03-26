@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Feedback System</title>
+
+<link rel="stylesheet" href="../assets/css/feedbackPage.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script defer src="../assets/js/feedbackPage.js"></script>
+
+</head>
+
+<body>
+
+<main class="container">
+
+    <!-- ======== LEFT: FORM ======== -->
+    <section class="form-section">
+        <h1>Submit Your Feedback</h1>
+        <p>Help us improve our service by sharing your thoughts.</p>
+
+        <form id="feedbackForm">
+
+            <!-- Personal Info -->
+            <h3>1. Personal Information</h3>
+
+            <input type="text" id="fullName" placeholder="Enter your name" required>
+            <input type="email" id="emailAddress" placeholder="Enter your email" required>
+
+
+            <!-- Website Feedback -->
+            <h3>2. Website Feedback</h3>
+
+            <label>First time visiting?</label>
+            <div class="radio-group">
+                <label><input type="radio" name="firstVisit" value="Yes"> Yes</label>
+                <label><input type="radio" name="firstVisit" value="No"> No</label>
+            </div>
+
+            <label>Website is easy to use?</label>
+            <div class="radio-group">
+                <label><input type="radio" name="informative" value="Yes"> Yes</label>
+                <label><input type="radio" name="informative" value="No"> No</label>
+            </div>
+
+
+            <!-- Rating -->
+            <h3>3. Satisfaction Rating</h3>
+
+            <div class="star-rating">
+                <input type="radio" name="satisfactionRating" value="1"> ⭐
+                <input type="radio" name="satisfactionRating" value="2"> ⭐⭐
+                <input type="radio" name="satisfactionRating" value="3"> ⭐⭐⭐
+                <input type="radio" name="satisfactionRating" value="4"> ⭐⭐⭐⭐
+                <input type="radio" name="satisfactionRating" value="5"> ⭐⭐⭐⭐⭐
+            </div>
+
+
+            <!-- Dropdown -->
+            <h3>4. What are you giving feedback on?</h3>
+
+            <select id="feedbackType">
+                <option value="">Select Option</option>
+                <option>Website Design</option>
+                <option>Performance</option>
+                <option>Content</option>
+                <option>Support</option>
+            </select>
+
+
+            <!-- Checkbox -->
+            <h3>5. What did you like?</h3>
+
+            <div class="checkbox-group">
+                <label><input type="checkbox" value="UI"> UI Design</label>
+                <label><input type="checkbox" value="Speed"> Speed</label>
+                <label><input type="checkbox" value="Features"> Features</label>
+            </div>
+
+
+            <!-- Recommendation -->
+            <h3>6. Would you recommend us?</h3>
+
+            <div class="radio-group">
+                <label><input type="radio" name="recommendServices" value="Yes"> Yes</label>
+                <label><input type="radio" name="recommendServices" value="No"> No</label>
+            </div>
+
+
+            <!-- Comments -->
+            <h3>7. Additional Comments</h3>
+
+            <textarea id="comments" placeholder="Write your feedback..."></textarea>
+
+            <button type="submit">Submit Feedback</button>
+
+        </form>
+    </section>
+
+
+    <!-- ======== RIGHT: DASHBOARD ======== -->
+    <section class="dashboard-section">
+
+        <h2>Feedback Dashboard</h2>
+
+        <!-- Cards -->
+        <div class="cards">
+            <div class="card">
+                <h4>Total Feedback</h4>
+                <p id="totalResponses">0</p>
+            </div>
+
+            <div class="card">
+                <h4>Average Rating</h4>
+                <p id="avgRating">0</p>
+            </div>
+
+            <div class="card">
+                <h4>Recommendations</h4>
+                <p id="recommendRate">0%</p>
+            </div>
+        </div>
+
+        <!-- Chart -->
+        <div class="chart-box">
+            <canvas id="ratingChart"></canvas>
+        </div>
+
+        <!-- Feedback List -->
+        <div class="recent-feedback">
+            <h3>Recent Feedback</h3>
+            <div id="feedbackContainer"></div>
+        </div>
+
+    </section>
+
+</main>
+
+</body>
+</html>
